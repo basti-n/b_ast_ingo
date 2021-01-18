@@ -10,12 +10,16 @@ export const GlobalStyle = createGlobalStyle`
     box-sizing: border-box
   }
   body {
-    height: 100vh; 
     font-family: 'Balsamiq Sans', 'Roboto', cursive; 
     font-weight: lighter; 
     background-color: #8BC6EC;
     background-image: linear-gradient(135deg, #8BC6EC 0%, #9599E2 100%);
     margin: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0
 }
 `;
 
