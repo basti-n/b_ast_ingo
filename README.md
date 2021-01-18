@@ -5,6 +5,7 @@
 `npm start` runs the app in the development mode.
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
+Alternatively, enjoy some Zoom bingo on [Netlify]([onNetlify](https://reverent-jepsen-2a063d.netlify.app/)).
 
 ---
 
