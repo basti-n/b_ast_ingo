@@ -9,17 +9,19 @@ export const GlobalStyle = createGlobalStyle`
   :root {
     box-sizing: border-box
   }
+  html {
+    background-image: linear-gradient(135deg, #8BC6EC 0%, #9599E2 100%);
+  }
   body {
     font-family: 'Balsamiq Sans', 'Roboto', cursive; 
     font-weight: lighter; 
-    background-color: #8BC6EC;
-    background-image: linear-gradient(135deg, #8BC6EC 0%, #9599E2 100%);
-    margin: 0;
+    background: inherit;
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
-    bottom: 0
+    bottom: 0;
+    margin: 0;
 }
 `;
 

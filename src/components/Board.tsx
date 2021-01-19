@@ -17,7 +17,10 @@ import {
   uncheckAction,
 } from '../store/board.actions';
 import { ResetButton } from './ResetButton';
-import { computeResult } from '../store/board.winning.helper';
+import {
+  computeResult,
+  getNumberOfRows,
+} from '../store/board.winning.helper';
 import { Celebration } from './Celebration';
 import { createArray } from '../utils/create-array';
 
@@ -112,7 +115,7 @@ export const Board: FunctionComponent<BoardProps> = ({
         <Celebration onConfettiComplete={hideCelebration} />
       )}
 
-      <StyledTilesContainer>
+      <StyledTilesContainer numberOfRows={getNumberOfRows(tiles)}>
         {createArray(totalTiles).map((_, index) => (
           <Tile
             key={index}
@@ -142,20 +145,24 @@ export const StyledResetButtonContainer = styled.div`
   z-index: 2;
 `;
 
-export const StyledTilesContainer = styled.div`
-  --size: calc(calc((100vw / 5) - 2vw));
+export const StyledTilesContainer = styled.div<{
+  numberOfRows: number;
+}>`
+  --size: ${(props) => `calc(calc((100vw / ${props.numberOfRows}) - 2vw))`};
   --maxTileSize: 120px;
 
   display: grid;
   align-items: center;
   justify-content: center;
-  grid-template-columns: repeat(5, var(--size));
+  grid-template-columns: ${(props) =>
+    `repeat(${props.numberOfRows}, var(--size))`};
   grid-auto-rows: var(--size);
   transform: rotate(-2deg);
   margin: 2vh 0;
 
   @media screen and (min-width: 650px) {
-    grid-template-columns: repeat(5, var(--maxTileSize));
+    grid-template-columns: ${(props) =>
+      `repeat(${props.numberOfRows}, var(--maxTileSize))`};
     grid-auto-rows: var(--maxTileSize);
   }
 `;
