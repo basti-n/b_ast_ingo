@@ -144,7 +144,7 @@ export const StyledResetButtonContainer = styled.div`
 
 export const StyledTilesContainer = styled.div`
   --size: calc(calc((100vw / 5) - 2vw));
-  --maxTileSize: 125px;
+  --maxTileSize: 120px;
 
   display: grid;
   align-items: center;
